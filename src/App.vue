@@ -1,17 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      WELCOME TO VUE LAZY LOAD
+    </div>
+    <div class="videos">
+      <div v-for="(video, key) in videos"
+           :key="key">
+        <LazyVideo :sources="video.sources"
+                   :poster="video.poster">
+        </LazyVideo>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LazyVideo from "./components/LazyVideo.vue";
 
+function generateVideoData() {
+  const titles = [
+    "Baga-Beach",
+    "Beetle-Nut-Trees",
+    "Candolim-Beach",
+    "Fishermans-Village",
+    "Indian-Tea",
+    "Jeep-trip",
+    "Pool-games",
+    "The-Hill",
+    "The-Pelicans"
+  ]
+
+  return titles.map(title => ({
+    sources: [
+      `/video/${title}.mp4`,
+      `/video/${title}.webm`,
+    ],
+    poster: `/video/${title}.jpg`
+  }))
+}
 export default {
-  name: 'app',
+  name: "app",
+  data() {
+    return {
+      videos: generateVideoData()
+    };
+  },
   components: {
-    HelloWorld
+    LazyVideo
   }
 }
 </script>
@@ -22,7 +57,24 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  background: #2c3e50;
+}
+
+video {
+  max-width: 100%;
+}
+
+.videos {
+  max-width: 800px;
+  margin: auto;
+}
+
+.container {
+  height: 90vh;
+  width: 100%;
+  background: #2c3e50;
+  color: white;
+  font-size: 3em;
 }
 </style>

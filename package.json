@@ -1,19 +1,33 @@
 {
   "name": "vue-lazyload-video",
+  "description": "Easily lazyload your videos as they come into the viewport",
+  "keywords": [
+    "lazyload",
+    "video",
+    "vue",
+    "vuejs"
+  ],
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy-page": "gh-pages -d dist",
+    "build-deploy": "yarn build && yarn deploy-page",
+    "build-lib": "vue-cli-service build --target lib --name vue-on-visible src/lib/index.js"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^2.7.0",
+    "vue": "^2.5.17",
+    "vue-on-visible": "^0.5.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.4",
     "@vue/cli-plugin-eslint": "^3.0.4",
     "@vue/cli-service": "^3.0.4",
+    "gh-pages": "^2.0.0",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
@@ -22,14 +36,20 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+      "plugin:vue/essential"
     ],
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
     }
   },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
   "postcss": {
     "plugins": {
       "autoprefixer": {}
