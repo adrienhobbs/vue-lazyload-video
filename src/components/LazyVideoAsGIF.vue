@@ -1,13 +1,16 @@
 <template>
   <div class="lazy-video"
-       v-on-intersect="{topOffset: loadOffset, bottomOffset: loadOffset, once: !pauseOnExit}">
-    <video :poster="getPoster()"
+       v-on-intersect="{topOffset: loadOffset, bottomOffset: loadOffset}">
+    <video v-sync-location
+           :poster="posterSource"
            ref="video"
            preload="none"
            v-on:loadeddata="loaded = true"
            v-on:play="playing = true"
            v-on:pause="playing = false"
-           v-bind="attrs">
+           playsline
+           loop
+           muted>
       <source v-for="(source, i) in videoSources" :src="source" :key="i" />
     </video>
   </div>
@@ -15,13 +18,13 @@
 
 <script>
 export default {
-  name: 'LazyVideo',
+  name: 'LazyVideoAsGIF',
   data() {
     return {
+      isVisible: null,
       isIntersecting: null,
       loaded: false,
-      playing: false,
-      posterLoaded: false
+      playing: false
     }
   },
   props: {
@@ -34,55 +37,36 @@ export default {
       type: Array,
       required: false
     },
-    attrs: {
-      type: Object,
-      required: false,
-      default: function() {
-        return {
-          controls: true,
-          playsinline: true,
-          loop: false,
-          autoplay: false,
-          muted: false
-        }
-      }
-    },
     loadOffset: {
       default: '20%',
       required: false,
       type: String
     },
-    pauseOnExit: {
-      default: true,
-      required: false,
-      type: Boolean
-    }
   },
   computed: {
     videoSources() {
       return this.sources || [this.src]
-    }
-  },
-  methods: {
-    getPoster() {
-      if (this.isIntersecting && !this.posterLoaded) {
-        this.posterLoaded = true
-        return this.poster
-      } else if (this.posterLoaded) {
-        return this.poster
-      } else {
-        return ''
-      }
-
+    },
+    posterSource() {
+      return this.isIntersecting ? this.poster : ''
     }
   },
   watch: {
-    isIntersecting(isIntersecting, wasIntersecting) {
+    loaded(isLoaded) {
+      if (isLoaded && this.isVisible) {
+        this.$refs.video.play()
+      }
+    },
+    isVisible(isVisible, wasVisible) {
       // when out of view pause video
-      if (wasIntersecting && this.playing && this.pauseOnExit) {
+      if (wasVisible && this.playing) {
         this.$refs.video.pause()
+      } else if (isVisible && !this.playing && this.loaded) {
+        this.$refs.video.play()
       }
 
+    },
+    isIntersecting(isIntersecting, wasIntersecting) {
       // load if video is intersecting
       if (isIntersecting && !this.loaded) {
         this.$refs.video.load()
