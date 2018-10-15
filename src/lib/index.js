@@ -1,5 +1,16 @@
-export { default as LazyVideo } from '../components/LazyVideo'
-export { default as LazyVideoAsGIF } from '../components/LazyVideoAsGIF'
+import Vue from 'vue'
+import VueOnIntersect from 'vue-on-intersect'
+import VueSyncLocation from 'vue-sync-location'
 
-import Plugin from './plugin'
-export default Plugin
+import LazyVideo from '../components/LazyVideo'
+import LazyVideoAsGIF from '../components/LazyVideoAsGIF'
+
+export default {
+  install: function() {
+    Vue.use(VueOnIntersect)
+    Vue.use(VueSyncLocation)
+
+    Vue.component('LazyVideo', LazyVideo)
+    Vue.component('LazyVideoAsGIF', LazyVideoAsGIF)
+  }
+}
