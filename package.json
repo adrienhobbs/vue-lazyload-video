@@ -1,6 +1,6 @@
 {
   "name": "vue-lazyload-video",
-  "description": "Easily lazyload your videos as they come into the viewport",
+  "description": "Lazyload your videos as they near the viewport.",
   "keywords": [
     "lazyload",
     "video",

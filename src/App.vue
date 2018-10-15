@@ -9,7 +9,10 @@
             </h1>
             <h2 class="subtitle"
                 style="margin-top: 30px;">
-              Lazy Load Videos With Ease.
+              Lazy Load Videos With Ease. <br>
+              This uses the Intersection Observer Api. Please use the
+              <a href="https://github.com/w3c/IntersectionObserver/tree/master/polyfill"
+                 target="_blank">polyfill</a> to support all browsers.
             </h2>
             <p>Need a simple way to lazy load your videos? Or maybe you're looking to lazy load videos that behave like GIF's? We got you covered.</p>
             <p>How do you know this is working? Open your network tab and watch poster images and video sources get loaded as they get closer to entering the viewport.<br>All videos from <a href="http://www.coverr.co">Coverr.co</a></p>
