@@ -1,5 +1,3 @@
-require('intersection-observer')
-console.log(IntersectionObserver)
 import Vue from 'vue'
 import App from './App.vue'
 import VueHighlightJs from 'vue-highlightjs'
