@@ -31,9 +31,9 @@ Vue.use(VueLazyLoadVideo)
                 <p class="is-dark">This component lazy loads videos and their respective poster images, according to the default or user-set loadOffset.</p>
                 <pre v-highlightjs>
 //For videos with multiple sources use an array of sources and the "sources" prop
-                <code class="html">&lt;LazyVideo :sources="['videos/video1.mp4', 'videos/video1.webm']" :poster="video.poster" /&gt;</code>
-// For videos with a single source use the "src" prop 
-                <code class="html">&lt;LazyVideo :src="videos/video1.mp4" :poster="video.poster" /&gt;</code>
+                <code class="html">&lt;LazyVideo :sources="['videos/video1.mp4', 'videos/video1.webm']" :poster="images/poster-image.jpg" /&gt;</code>
+// For videos with a single source use the "src" prop
+                <code class="html">&lt;LazyVideo :src="videos/video1.mp4" :poster="images/poster-image.jpg" /&gt;</code>
               </pre>
                 <div class="is-size-3">Props</div>
                 <table class="table">
