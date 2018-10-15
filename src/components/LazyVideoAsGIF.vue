@@ -8,10 +8,13 @@
            v-on:loadeddata="loaded = true"
            v-on:play="playing = true"
            v-on:pause="playing = false"
-           playsline
+           autoplay
+           playsinline
            loop
            muted>
-      <source v-for="(source, i) in videoSources" :src="source" :key="i" />
+      <source v-for="(source, i) in videoSources"
+              :src="source"
+              :key="i" />
     </video>
   </div>
 </template>
@@ -38,7 +41,7 @@ export default {
       required: false
     },
     loadOffset: {
-      default: '20%',
+      default: '50%',
       required: false,
       type: String
     },
@@ -54,7 +57,7 @@ export default {
   watch: {
     loaded(isLoaded) {
       if (isLoaded && this.isVisible) {
-        this.$refs.video.play()
+        // this.$refs.video.play()
       }
     },
     isVisible(isVisible, wasVisible) {

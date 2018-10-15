@@ -8,7 +8,9 @@
            v-on:play="playing = true"
            v-on:pause="playing = false"
            v-bind="attrs">
-      <source v-for="(source, i) in videoSources" :src="source" :key="i" />
+      <source v-for="(source, i) in videoSources"
+              :src="source"
+              :key="i" />
     </video>
   </div>
 </template>
@@ -48,7 +50,7 @@ export default {
       }
     },
     loadOffset: {
-      default: '20%',
+      default: '50%',
       required: false,
       type: String
     },

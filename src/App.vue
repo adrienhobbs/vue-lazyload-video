@@ -109,13 +109,13 @@ Vue.use(VueLazyLoadVideo)
                       <th>loadOffset</th>
                       <td>String</td>
                       <td>
-                        "20%"
+                        "50%"
                       </td>
                       <td>
                         Percentage offset that will trigger your video to be loaded.
                       </td>
                       <td>
-                        "20%" (Load when within 10% of entering the viewport.)
+                        "20%" (Load when within 20% of entering the viewport.)
                       </td>
                     </tr>
                   </tbody>
@@ -180,13 +180,13 @@ Vue.use(VueLazyLoadVideo)
                       <th>loadOffset</th>
                       <td>String</td>
                       <td>
-                        "20%"
+                        "50%"
                       </td>
                       <td>
                         Percentage offset that will trigger your video to be loaded.
                       </td>
                       <td>
-                        "20%" (Load when within 10% of entering the viewport.)
+                        "20%" (Load when within 20% of entering the viewport.)
                       </td>
                     </tr>
                   </tbody>
