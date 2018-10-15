@@ -12,7 +12,7 @@
               Lazy Load Videos With Ease.
             </h2>
             <p>Need a simple way to lazy load your videos? Or maybe you're looking to lazy load videos that behave like GIF's? We got you covered.</p>
-            <p>How do you know this is working? Open your network tab and watch poster images and video sources get loaded as they get closer to entering the viewport.</p>
+            <p>How do you know this is working? Open your network tab and watch poster images and video sources get loaded as they get closer to entering the viewport.<br>All videos from <a href="http://www.coverr.co">Coverr.co</a></p>
             <div class="">
               <div class="box">
                 <div class="subtitle is-size-3">Install</div>
@@ -209,8 +209,8 @@ Vue.use(VueLazyLoadVideo)
           </LazyVideo>
         </div>
         <h1 class="title is-size-1">LazyVideoAsGIF Example</h1>
-        <LazyVideoAsGIF src="/video/Baga-Beach.mp4"
-                        poster="/video/Baga-Beach.jpg">
+        <LazyVideoAsGIF src="video/Baga-Beach.mp4"
+                        poster="video/Baga-Beach.jpg">
         </LazyVideoAsGIF>
       </div>
     </div>
@@ -218,6 +218,7 @@ Vue.use(VueLazyLoadVideo)
 </template>
 
 <script>
+console.log(process.env.NODE_ENV)
 
 function generateVideoData() {
   const titles = [
@@ -234,10 +235,10 @@ function generateVideoData() {
 
   return titles.map(title => ({
     sources: [
-      `/video/${title}.mp4`,
-      `/video/${title}.webm`,
+      `video/${title}.mp4`,
+      `video/${title}.webm`,
     ],
-    poster: `/video/${title}.jpg`
+    poster: `video/${title}.jpg`
   }))
 }
 export default {
