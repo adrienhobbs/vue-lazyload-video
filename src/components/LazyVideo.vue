@@ -1,18 +1,16 @@
 <template>
-  <div class="lazy-video"
-       v-on-intersect="{topOffset: loadOffset, bottomOffset: loadOffset, once: !pauseOnExit}">
-    <video :poster="getPoster()"
-           ref="video"
-           preload="none"
-           v-on:loadeddata="loaded = true"
-           v-on:play="playing = true"
-           v-on:pause="playing = false"
-           v-bind="attrs">
-      <source v-for="(source, i) in videoSources"
-              :src="source"
-              :key="i" />
-    </video>
-  </div>
+  <video :poster="getPoster()"
+         v-on-intersect="{topOffset: loadOffset, bottomOffset: loadOffset, once: !pauseOnExit}"
+         ref="video"
+         preload="none"
+         v-on:loadeddata="loaded = true"
+         v-on:play="playing = true"
+         v-on:pause="playing = false"
+         v-bind="attrs">
+    <source v-for="(source, i) in videoSources"
+            :src="source"
+            :key="i" />
+  </video>
 </template>
 
 <script>
@@ -93,4 +91,11 @@ export default {
   }
 }
 </script>
+
+<style>
+video {
+  max-width: 100%;
+}
+</style>
+
 

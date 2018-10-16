@@ -1,22 +1,20 @@
 <template>
-  <div class="lazy-video"
-       v-on-intersect="{topOffset: loadOffset, bottomOffset: loadOffset}">
-    <video v-sync-location
-           :poster="posterSource"
-           ref="video"
-           preload="none"
-           v-on:loadeddata="loaded = true"
-           v-on:play="playing = true"
-           v-on:pause="playing = false"
-           autoplay
-           playsinline
-           loop
-           muted>
-      <source v-for="(source, i) in videoSources"
-              :src="source"
-              :key="i" />
-    </video>
-  </div>
+  <video v-sync-location
+         :poster="posterSource"
+         v-on-intersect="{topOffset: loadOffset, bottomOffset: loadOffset}"
+         ref="video"
+         preload="none"
+         v-on:loadeddata="loaded = true"
+         v-on:play="playing = true"
+         v-on:pause="playing = false"
+         autoplay
+         playsinline
+         loop
+         muted>
+    <source v-for="(source, i) in videoSources"
+            :src="source"
+            :key="i" />
+  </video>
 </template>
 
 <script>
@@ -79,3 +77,8 @@ export default {
 }
 </script>
 
+<style>
+video {
+  max-width: 100%;
+}
+</style>
