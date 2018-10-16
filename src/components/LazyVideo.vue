@@ -77,6 +77,11 @@ export default {
     }
   },
   watch: {
+    loaded(isLoaded) {
+      if (isLoaded) {
+        this.$emit('loaded')
+      }
+    },
     isIntersecting(isIntersecting, wasIntersecting) {
       // when out of view pause video
       if (wasIntersecting && this.playing && this.pauseOnExit) {

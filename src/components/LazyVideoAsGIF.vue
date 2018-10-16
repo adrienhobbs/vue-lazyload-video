@@ -54,8 +54,8 @@ export default {
   },
   watch: {
     loaded(isLoaded) {
-      if (isLoaded && this.isVisible) {
-        // this.$refs.video.play()
+      if (isLoaded) {
+        this.$emit('loaded')
       }
     },
     isVisible(isVisible, wasVisible) {
