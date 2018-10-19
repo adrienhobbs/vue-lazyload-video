@@ -3,6 +3,13 @@
   "description": "Lazyload your videos as they near the viewport.",
   "keywords": [
     "lazyload",
+    "lazy load",
+    "lazy loading",
+    "loading",
+    "gif",
+    "video",
+    "looping video",
+    "intersection observer",
     "video",
     "vue",
     "vuejs"
