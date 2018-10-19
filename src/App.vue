@@ -16,6 +16,7 @@
             </h2>
             <p>Need a simple way to lazy load your videos? Or maybe you're looking to lazy load videos that behave like GIF's? We got you covered.</p>
             <p>How do you know this is working? Open your network tab and watch poster images and video sources get loaded as they get closer to entering the viewport.<br>All videos from <a href="http://www.coverr.co">Coverr.co</a></p>
+            <p>This is still a new package, so please submit any issues or feature requests <a href="https://github.com/adrienhobbs/vue-lazyload-video/issues">here.</a></p>
             <div class="">
               <div class="box">
                 <div class="subtitle is-size-3">Install</div>
@@ -76,7 +77,7 @@ Vue.use(VueLazyLoadVideo)
                         'videos/video1.mp4'
                       </td>
                       <td>A string containing the url of the video.</td>
-                      <td>N/A</td>
+                      <td>Required if you're not passing a sources props</td>
                     </tr>
                     <tr>
                       <th>poster</th>
@@ -171,7 +172,7 @@ Vue.use(VueLazyLoadVideo)
                         'videos/video1.mp4'
                       </td>
                       <td>A string containing the url of the video.</td>
-                      <td>N/A</td>
+                      <td>Required if you're not passing a sources props</td>
                     </tr>
                     <tr>
                       <th>poster</th>
