@@ -7632,10 +7632,10 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-sync-location@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/vue-sync-location/-/vue-sync-location-0.1.4.tgz#8d85a3636fff7c0f26d02a82182a05427fcbbfce"
-  integrity sha512-6dxGikF2cW5GOy5PNCpW9p4mv2LoLowVsiPHgpwyUOFQY631HZ7QuS4PphQwYh9NXpCQqfVIetH7AnOedopmWw==
+vue-sync-location@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/vue-sync-location/-/vue-sync-location-0.1.6.tgz#3d75f3613035a82c99ddc6e860e119e699d96f29"
+  integrity sha512-h6lrxoSEUCjm2xwkFy9lfy3DmgnWBAxBqzL3OBb1upWlRzevzN7TOVnIuW1Bh4PwNCqE93mXSPGw7vFLspdDug==
   dependencies:
     vue "^2.5.17"
 

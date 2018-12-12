@@ -37,7 +37,7 @@
     "@vue/cli-service": "^3.0.4",
     "bulma": "^0.7.1",
     "gh-pages": "^2.0.0",
-    "vue-sync-location": "^0.1.4",
+    "vue-sync-location": "^0.1.6",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
