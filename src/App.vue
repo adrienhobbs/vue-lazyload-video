@@ -225,7 +225,6 @@ Vue.use(VueLazyLoadVideo)
 </template>
 
 <script>
-console.log(process.env.NODE_ENV)
 
 function generateVideoData() {
   const titles = [

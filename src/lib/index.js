@@ -6,6 +6,7 @@ import LazyVideoAsGIF from '../components/LazyVideoAsGIF'
 
 export default {
   install: function(Vue) {
+    if (typeof window === 'undefined') return
     Vue.use(VueOnIntersect)
     Vue.use(VueSyncLocation)
 
